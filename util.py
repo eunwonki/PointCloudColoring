@@ -85,9 +85,9 @@ def pcd_to_geom_node(pcd):
     return node
 
 
-def color_point_cloud(source_node, feature_points):
+def color_point_cloud(source_node, feature_points, uniform_color=[1, 1, 1]):
     pcd = geom_node_to_pcd(source_node)
-    pcd.paint_uniform_color([1, 1, 1])
+    pcd.paint_uniform_color(uniform_color)
     pcd_tree = o3d.geometry.KDTreeFlann(pcd)
 
     for feature_point in feature_points:

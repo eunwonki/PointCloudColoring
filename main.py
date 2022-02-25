@@ -128,8 +128,9 @@ class App(ShowBase):
             [[0.05720277, 0.2442303, 0.1989999], 0.08],
             [[0.322737, 0.2498799, 0.1969999], 0.08]
         ]
+        background_color = [0, 0, 1]
 
-        new_node = util.color_point_cloud(self.source_pc_node, feature_points)
+        new_node = util.color_point_cloud(self.source_pc_node, feature_points, background_color)
         self.source_pc_node.removeNode()
         self.source_pc_node = new_node
         self.source_pc_node.reparentTo(self.source_parent_node)
